@@ -1,0 +1,24 @@
+
+<!-- start: Header -->
+<header id="header" data-ng-include="'views/includes/header.html'" ng-cloak></header>
+
+<!-- start: Header -->
+
+<div class="container-fluid-full">
+	<div class="row-fluid">
+
+		<!-- start: Main Menu -->
+		<div id="sidebar-left" class="span2" data-ng-include="'views/includes/left.html'"></div>
+		<!-- end: Main Menu -->
+		<!-- start: Content -->
+		<div id="content" class="span10" data-ui-view="main"></div>
+
+		<!-- end: Content -->
+	</div>
+	<!--/#content.span10-->
+</div>
+<!--/fluid-row-->
+
+<div class="clearfix"></div>
+
+<footer data-ng-include="'views/includes/footer.html'"> </footer>
