@@ -1,5 +1,6 @@
-	<ul class="breadcrumb" ng-controller="yetjListCtrl">
-		<li><i class="icon-home"></i> <a href="index.html">满记甜品</a> 
+<div ng-controller="yetjListCtrl">
+	<ul class="breadcrumb" >
+		<li><i class="icon-home"></i> <a href="index.html">{{title1}}</a> 
 		<i class="icon-angle-right"></i></li>
 		<li><a href="#">余额调节</a></li>
 	</ul>
@@ -13,31 +14,14 @@
 							<div class="span6">
 								<label class="control-label" for="selectError3">查询年份</label>
 								<div class="controls">
-									<select id="selectError3">
-										<option>2015</option>
-										<option>2016</option>
-										<option>2017</option>
-										<option>2018</option>
-										<option>2019</option>
+									<select id="selectError3" ng-model="choose_years" ng-options="option for option in option_years">
 									</select>
 								</div>
 							</div>
 							<div class="span6">
 								<label class="control-label" for="selectError4">查询月份</label>
 								<div class="controls">
-									<select id="selectError4">
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-										<option>5</option>
-										<option>6</option>
-										<option>7</option>
-										<option>8</option>
-										<option>9</option>
-										<option>10</option>
-										<option>11</option>
-										<option>12</option>
+									<select id="selectError4" ng-model="choose_months" ng-options="option.show for option in option_months">
 									</select>
 								</div>
 							</div>
@@ -96,5 +80,5 @@
 			</div>
 		</div>
 		<!--/span-->
-
 	</div>
+</div>
