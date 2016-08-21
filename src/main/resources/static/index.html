@@ -11,6 +11,7 @@
 	<link href="style/style.css" rel="stylesheet">
 	<link href="style/bootstrap-responsive.min.css" rel="stylesheet">
 	<link href="style/style-responsive.css" rel="stylesheet">	
+ 	<link rel="stylesheet" type="text/css" href="node_modules/angular-ui-grid/ui-grid.min.css">
 	
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,9 +24,10 @@
 	<div data-ui-view=""></div>
 	
 	<!-- angularjs start-->
-	<script src="plugins/angular/angular.js"></script>
-	<script src="plugins/angular/angular-route.min.js"></script>
-	<script src="plugins/angular/angular-ui-router.js"></script>
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="node_modules/angular-ui-grid/ui-grid.min.js"></script>
 	
 	<!-- angularjs end-->
 	
@@ -47,12 +49,15 @@
 	<script src="script/base/jquery.imagesloaded.js"></script>
 	<script src="script/base/jquery.masonry.min.js"></script>
 	<script src="script/base/jquery.sparkline.min.js"></script>
+	<script src="script/base/jquery.knob.modified.js"></script>
 	<script src="script/base/custom.js"></script>
+
 	
 	<!-- base script end -->
 	
 	<!-- app js -->
 	<script src="script/app/myApp.js"></script>
 	<script src="script/controller/yetj.js"></script>
+	<script src="script/directives/breadcrumb.js"></script>
 </body>
 </html>

@@ -1,8 +1,10 @@
-	<ul class="breadcrumb" ng-controller="yetjListCtrl">
-		<li><i class="icon-home"></i> <a href="index.html">满记甜品</a> 
-		<i class="icon-angle-right"></i></li>
-		<li><a href="#">余额调节</a></li>
-	</ul>
+<div ng-controller="YetjListCtrl">
+<!-- 	<ul class="breadcrumb"> -->
+<!-- 		<li><i class="icon-home"></i> <a href="index.html">满记甜品</a> <i -->
+<!-- 			class="icon-angle-right"></i></li> -->
+<!-- 		<li><a href="#">余额调节</a></li> -->
+<!-- 	</ul> -->
+	<breadcrumb></breadcrumb>
 	<div class="row-fluid">
 
 		<div class="box span12">
@@ -13,44 +15,27 @@
 							<div class="span6">
 								<label class="control-label" for="selectError3">查询年份</label>
 								<div class="controls">
-									<select id="selectError3">
-										<option>2015</option>
-										<option>2016</option>
-										<option>2017</option>
-										<option>2018</option>
-										<option>2019</option>
+									<select id="selectError3" ng-model="selectedYear" ng-options="year for year in years" required>
 									</select>
 								</div>
 							</div>
 							<div class="span6">
 								<label class="control-label" for="selectError4">查询月份</label>
 								<div class="controls">
-									<select id="selectError4">
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-										<option>5</option>
-										<option>6</option>
-										<option>7</option>
-										<option>8</option>
-										<option>9</option>
-										<option>10</option>
-										<option>11</option>
-										<option>12</option>
+									<select id="selectError4" ng-model="selectedMonth" ng-options="month.show for month in months" required>
 									</select>
 								</div>
 							</div>
 						</div>
 						<div class="form-actions"
 							style="text-align: center; padding-left: 0px">
-							<button type="submit" class="btn btn-primary"
-								id="queryAccountDetail">查询</button>
-							<button class="btn" class="btn btn-primary" id="getAccountDetail">获取</button>
+							<button type="submit" class="btn btn-primary" id="queryAccountDetail" ng-click="goToDetail()">查询</button>
+							<button class="btn" class="btn btn-primary" id="getAccountDetail"  ng-click="getData()">获取</button>
 						</div>
 					</form>
 				</div>
-				<div id="totalData" style="" hidden="true">
+<!-- 				<div class="box-content" ui-grid="gridOptions"> -->
+				<div class="box-content">
 
 					<!-- 						<table class="table table-striped table-bordered bootstrap-datatable datatable"> -->
 					<table class="table table-bordered table-striped table-condensed">
@@ -67,29 +52,19 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>012</td>
-								<td class="center">31001505400050030190</td>
-								<td class="center">天津建行付款户</td>
-								<td class="center">10026072</td>
-								<td class="center">849414.02</td>
-								<td class="center">1520761.88</td>
-								<td class="center">671347.86</td>
+	                         
+							<tr ng-repeat="option in myData">
+								<td>{{option.no}}</td>
+								<td class="center">{{option.accountNo}}</td>
+								<td class="center">{{option.T3Name}}</td>
+								<td class="center">{{option.T3Code}}</td>
+								<td class="center">{{option.T3Balance}}</td>
+								<td class="center">{{option.bankBalance}}</td>
+								<td class="center">{{option.diffAmount}}</td>
 								<td class="center"><span class="label label-success"><a
-										href="detail.html" class="label-success">明细</a></span></td>
+										ui-sref="main.module.page({'module': 'yetj','page':'detail'})" class="label-success">明细</a></span></td>
 							</tr>
-							<tr>
-								<td>004</td>
-								<td class="center">37101985310051007219</td>
-								<td class="center">建行（青岛李沧万达）</td>
-								<td class="center">10024037</td>
-								<td class="center">177.48</td>
-								<td class="center">177.48</td>
-								<td class="center">0.00</td>
-								<td class="center"><span class="label label-success"><a
-										href="detail.html" class="label-success">明细</a></span></td>
-							</tr>
-							
+
 						</tbody>
 					</table>
 				</div>
@@ -98,3 +73,4 @@
 		<!--/span-->
 
 	</div>
+</div>
