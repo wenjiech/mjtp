@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ui.router','yetjModule','myapp.common.directive']);
+var myApp = angular.module('myApp', ['ui.router','yetjModule','myapp.common.directive', 'myapp.common.filters']);
 
 myApp.config(function ($stateProvider, $urlRouterProvider) {
 	

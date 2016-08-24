@@ -9,25 +9,25 @@
 				<div class="control-group">
 					<label class="control-label">企业账面余额</label>
 					<div class="controls">
-						<span class="input-xlarge uneditable-input">100.1</span>
+						<span class="input-xlarge uneditable-input">{{enterpriseDetail.balance |currency:"￥"}}</span>
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label">加：企业未收账款</label>
 					<div class="controls">
-						<span class="input-xlarge uneditable-input">100.1</span>
+						<span class="input-xlarge uneditable-input">{{enterpriseDetail.unreceivedAmount |currency:"￥" }}</span>
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label">减：企业未付账款</label>
 					<div class="controls">
-						<span class="input-xlarge uneditable-input">100.1</span>
+						<span class="input-xlarge uneditable-input">{{enterpriseDetail.unpaidAmount |currency:"￥" }}</span>
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label">调整后余额</label>
 					<div class="controls">
-						<span class="input-xlarge uneditable-input">100.1</span>
+						<span class="input-xlarge uneditable-input">{{enterpriseDetail.finalBalance |currency:"￥"}}</span>
 					</div>
 				</div>
 
@@ -41,31 +41,19 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>2016-6-23</td>
-							<td>结息</td>
-							<td>0.36</td>
-							<td>-</td>
-						</tr>
-						<tr>
-							<td>2016-6-23</td>
-							<td>结息</td>
-							<td>0.36</td>
-							<td>-</td>
-						</tr>
-						<tr>
-							<td>2016-6-23</td>
-							<td>结息</td>
-							<td>0.36</td>
-							<td>-</td>
+						<tr ng-repeat="detail in enterpriseList">
+							<td>{{detail.dealDate}}</td>
+							<td>{{detail.digest}}</td>
+							<td>{{detail.unreceivedAmount | amountFilter | currency:"￥"}}</td>
+							<td>{{detail.unpaidAmount | amountFilter}}</td>
 						</tr>
 					</tbody>
 					<tfoot>
 						<tr>
 							<th></th>
 							<th>合计</th>
-							<th>18.12</th>
-							<th>170.34</th>
+							<th>{{enterpriseDetail.totalUnreceived}}</th>
+							<th>{{enterpriseDetail.totalUnpaid}}</th>
 						</tr>
 					</tfoot>
 				</table>
@@ -75,25 +63,25 @@
 					<div class="control-group">
 						<label class="control-label">银行账面余额</label>
 						<div class="controls">
-							<span class="input-xlarge uneditable-input">100.11</span>
+							<span class="input-xlarge uneditable-input">{{bankDetail.balance |currency:"￥"}}</span>
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label">加：银行未收账款</label>
 						<div class="controls">
-							<span class="input-xlarge uneditable-input">100.1</span>
+							<span class="input-xlarge uneditable-input">{{bankDetail.unreceivedAmount |currency:"￥"}}</span>
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label">减：银行未付账款</label>
 						<div class="controls">
-							<span class="input-xlarge uneditable-input">100.1</span>
+							<span class="input-xlarge uneditable-input">{{bankDetail.unpaidAmount |currency:"￥"}}</span>
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label">调整后余额</label>
 						<div class="controls">
-							<span class="input-xlarge uneditable-input">100.1</span>
+							<span class="input-xlarge uneditable-input">{{bankDetail.finalBalance |currency:"￥"}}</span>
 						</div>
 					</div>
 					<table class="table table-bordered">
@@ -106,31 +94,19 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>2016-6-23</td>
-								<td>结息</td>
-								<td>0.36</td>
-								<td>-</td>
-							</tr>
-							<tr>
-								<td>2016-6-23</td>
-								<td>结息</td>
-								<td>0.36</td>
-								<td>-</td>
-							</tr>
-							<tr>
-								<td>2016-6-23</td>
-								<td>结息</td>
-								<td>0.36</td>
-								<td>-</td>
+							<tr ng-repeat="detail in bankList">
+								<td>{{detail.dealDate}}</td>
+								<td>{{detail.digest}}</td>
+								<td>{{detail.unreceivedAmount | amountFilter}}</td>
+								<td>{{detail.unpaidAmount | amountFilter}}</td>
 							</tr>
 						</tbody>
 						<tfoot>
 							<tr>
 								<th></th>
 								<th>合计</th>
-								<th>18.12</th>
-								<th>170.34</th>
+								<th>{{bankDetail.totalUnreceived}}</th>
+								<th>{{bankDetail.totalUnpaid}}</th>
 							</tr>
 						</tfoot>
 					</table>

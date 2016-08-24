@@ -69,6 +69,13 @@ yetjModule.controller('YetjListCtrl',['$scope', '$state',function($scope, $state
 	.controller('YetjDetailCtrl',['$scope', '$state',function($scope, $state, $routeParams){
 		console.log("welecome YetjDetailCtrl");
 		$scope.titles=["满记甜品","余额调节","详情"];
+		$scope.enterpriseDetail={"balance":1111123123, "unreceivedAmount":100, "unpaidAmount":101, "finalBalance":1234,"totalUnreceived":10,"totalUnpaid":20};
+		$scope.bankDetail={"balance":1111, "unreceivedAmount":100, "unpaidAmount":101, "finalBalance":1234,"totalUnreceived":10,"totalUnpaid":20};
+		$scope.enterpriseList=[{"dealDate":"2016-6-23", "digest":"结息",  "unreceivedAmount":13, "unpaidAmount":null },
+		                       {"dealDate":"2016-6-23", "digest":"结息",  "unreceivedAmount":13, "unpaidAmount":null }];
+		$scope.bankList=[{"dealDate":"2016-6-23", "digest":"结息",  "unreceivedAmount":13, "unpaidAmount":null },
+		                 {"dealDate":"2016-6-23", "digest":"结息",  "unreceivedAmount":13, "unpaidAmount":null }];
+
 	}]);
 
 //}(myApp));
