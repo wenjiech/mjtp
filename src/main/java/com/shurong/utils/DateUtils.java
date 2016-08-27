@@ -4,7 +4,17 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class DateUtils {
-
+	
+	/**
+	 * 获得一个月的第一天
+	 * @param year
+	 * @param month
+	 * @return
+	 */
+	public static String getFirstDayOfMonth(int year, int month){
+		return getFirstDayOfMonth(year, month, "yyyyMMdd");
+	}
+	
 	/**
 	 * 获得一个月的第一天
 	 * @param year
@@ -16,6 +26,17 @@ public class DateUtils {
 		Calendar calendar = Calendar.getInstance();
 		calendar.set(year, month -1 , 1);//Calendar中月份是从0开始计算，故实际月份-1
 		return new SimpleDateFormat(formart).format(calendar.getTime());
+	}
+	
+	
+	/**
+	 * 获得一个月的最后一天
+	 * @param year
+	 * @param month
+	 * @return
+	 */
+	public static String getLastDayOfMonth(int year, int month){
+		return getLastDayOfMonth(year, month, "yyyyMMdd");
 	}
 	
 	/**
